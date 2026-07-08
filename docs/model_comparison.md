@@ -18,9 +18,9 @@
 
 ### 2、智谱清言GLM-5.2
 
-![image-20260707094614896](C:\Users\zhouxu48\AppData\Roaming\Typora\typora-user-images\image-20260707094614896.png)
+![图片](./images/image-20260707094614896.png)
 
-![image-20260707095438403](C:\Users\zhouxu48\AppData\Roaming\Typora\typora-user-images\image-20260707095438403.png)
+![图片](./images/image-20260707095438403.png)
 
 **关键词/亮点：**
 
@@ -31,11 +31,11 @@
 
 ### 3、Kimi2.6思考
 
-![image-20260707224232476](C:\Users\zhouxu48\AppData\Roaming\Typora\typora-user-images\image-20260707224232476.png)
+![图片](./images/image-20260707224232476.png)
 
-![image-20260707224256681](C:\Users\zhouxu48\AppData\Roaming\Typora\typora-user-images\image-20260707224256681.png)
+![图片](./images/image-20260707224256681.png)
 
-![image-20260707224317167](C:\Users\zhouxu48\AppData\Roaming\Typora\typora-user-images\image-20260707224317167.png)
+![图片](./images/image-20260707224317167.png)
 
 **关键词/描述：**
 
@@ -46,9 +46,9 @@
 
 ### 4、DeepSeekV3-专家模式
 
-![image-20260707101542179](C:\Users\zhouxu48\AppData\Roaming\Typora\typora-user-images\image-20260707101542179.png)
+![图片](./images/image-20260707101542179.png)
 
-![image-20260707101603693](C:\Users\zhouxu48\AppData\Roaming\Typora\typora-user-images\image-20260707101603693.png)
+![图片](./images/image-20260707101603693.png)
 
 **关键词/亮点：**
 
@@ -58,9 +58,9 @@
 
 ### 5、GPT5.5-JoyBuilder
 
-![image-20260707095928441](C:\Users\zhouxu48\AppData\Roaming\Typora\typora-user-images\image-20260707095928441.png)
+![图片](./images/image-20260707095928441.png)
 
-![image-20260707095947596](C:\Users\zhouxu48\AppData\Roaming\Typora\typora-user-images\image-20260707095947596.png)
+![图片](./images/image-20260707095947596.png)
 
 **关键词/亮点：**
 
