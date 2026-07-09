@@ -8,6 +8,24 @@
 
 ---
 
+## 说在前面
+# Day 4 任务清单 —— LangGraph 核心概念入门
+
+> **当前进度**：已完成 Day 1–3（模型对比、API 调通、Function Calling）  
+> **今日目标**：理解 LangGraph 基础，定义 Agent 状态结构，手绘流转图  
+> **预计耗时**：3 小时
+
+## 📋 本周已完成任务回顾（7/6–7/9）
+
+| 日期 | 原计划 | 实际完成 | 状态 |
+| :--- | :--- | :--- | :--- |
+| 7/6（周一） | Day 1：注册5款模型 + 对比笔记 + GitHub初始化 | 已选 DeepSeek + GLM-5.2，GitHub 仓库已创建 | ✅ |
+| 7/7（周二） | Day 2：Python环境 + 第一次API调用 | `first_call.py` 已跑通 | ✅ |
+| 7/8（周三） | Day 3：Function Calling + 定义业务工具 | `check_suppliers_risk.py` + `second_call.py` 已跑通，性能对比数据已出 | ✅ |
+| **7/9（周四）** | **Day 4：LangGraph 核心概念 + 定义 State Schema** | **进行中** | 🔄 |
+
+---
+
 ## 一、整体阶段划分（当前仅展示前两阶段）
 
 整个计划分为两大阶段，循序渐进：
