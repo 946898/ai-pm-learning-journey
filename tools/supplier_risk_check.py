@@ -10,6 +10,7 @@ def check_supplier_risk(supplier_name: str) -> dict:
     Returns:
         dict: 包含延迟率、合格率、资质到期日、风险等级、建议
     """
+    print(f" [DEBUG] 查询供应商: {supplier_name}")
     # ---------- Mock 数据库（模拟真实数据源） ----------
     # 正常应该接入业务系统的主数据
     mock_db = {
@@ -29,15 +30,15 @@ def check_supplier_risk(supplier_name: str) -> dict:
             "cert_expire": "2026-11-01",
         },
         "默认": {                        # 如果传入未知供应商，用这个默认值
-            "delay_rate": 0.10,
-            "quality_pass_rate": 0.90,
-            "cert_expire": "2027-06-30",
+            "delay_rate": 0.80,
+            "quality_pass_rate": 0.20,
+            "cert_expire": "2025-06-30",
         },
     }
 
     # ---------- 获取数据（不存在则用默认值） ----------
     data = mock_db.get(supplier_name, mock_db["默认"])
-
+    print(f" [DEBUG] 获取到的数据: {data}")
     # ---------- 风险评级逻辑 ----------
     delay = data["delay_rate"]
     quality = data["quality_pass_rate"]
@@ -54,6 +55,8 @@ def check_supplier_risk(supplier_name: str) -> dict:
         recommendation = "建议合作，可适当放宽账期"
     else:
         recommendation = "建议暂停合作，启动备选供应商排查"
+
+    print(f" [DEBUG] 计算出的 risk_level: {risk_level}")
 
     # ---------- 返回结果 ----------
     return {
