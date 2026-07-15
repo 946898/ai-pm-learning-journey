@@ -5,6 +5,7 @@
 
 from typing import Literal
 from langgraph.graph import StateGraph, START, END
+from langgraph.checkpoint.memory import MemorySaver
 from graph.nodes import parser_order, risk_analysis, supplier_verify
 from graph.state import OrderState
 
@@ -21,12 +22,39 @@ def auto_approve(state: OrderState) -> dict:
 
 def human_review(state: OrderState) -> dict:
     """
-    终端节点：高风险订单需人工复核
+    终端节点：高风险订单需人工复核，等待人工输入决策
     """
-    print(f"× 订单{state.get('order_id', '未知')}需人工复核。")
+    print("=" * 60)
+    print("】】】人工复核环节【【【")
+    print("=" * 60)
+    print(f"订单号: {state.get('order_id', '未知')}")
+    print(f"供应商: {state.get('supplier_name', '未知')}")
+    print(f"风险等级: {state.get('risk_level', '未知')}")
+    print(f"风险评分: {state.get('risk_score', 'N/A')}")
+    print("-" * 60)
+
+    # 等待人工输入
+    while True:
+        choice = input("请选择：[1]通过  [2]驳回").strip()
+        if choice == "1":
+            decision, reason = "通过", "人工审核通过"
+            print("请再次确认您的结果")
+            choice = input("请选择：[1]通过  [2]驳回").strip()
+            if choice == "1":
+                decision, reason = "通过", "人工审核通过"
+                print("用户最终确认审核通过")
+            break
+        elif choice == "2":
+            decision, reason = "驳回", "人工审核驳回"
+            break
+        
+    
+    print(f"√人工决策：{decision} - {reason}")
+
     return{
-        "final_decision": "wait check",
-        "requires_human_review": True
+        "final_decision": decision,
+        "final_reason": reason,
+        "requires_human_review": False
     }
 
 # 条件边路由函数
@@ -81,4 +109,5 @@ graph_builder.add_edge("auto_approve", END)
 graph_builder.add_edge("human_review", END)
 
 # 编译图
-agent = graph_builder.compile()
+memory = MemorySaver()
+agent = graph_builder.compile(checkpointer=memory)
