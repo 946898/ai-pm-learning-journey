@@ -29,6 +29,11 @@ def check_supplier_risk(supplier_name: str) -> dict:
             "quality_pass_rate": 0.99,
             "cert_expire": "2026-11-01",
         },
+        "噜噜王国": {                     # 🎉 改成低风险嘿嘿
+            "delay_rate": 0.01,
+            "quality_pass_rate": 0.995,
+            "cert_expire": "2028-12-31",
+        },
         "默认": {                        # 如果传入未知供应商，用这个默认值
             "delay_rate": 0.80,
             "quality_pass_rate": 0.20,
