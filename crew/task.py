@@ -10,7 +10,7 @@ from crew.agents import audit_agent, risk_agent, exception_agent
 # ---- Task 1：订单解析 ----
 # 由 audit_agent 执行
 parse_task = Task(
-    description="""解析用户提供的采购订单信息。
+    description="""解析用户提供的采购订单信息:{order_info}。
     从订单中提取以下字段：
     - 供应商名称（supplier_name）
     - 订单总金额（total_amount）
@@ -32,7 +32,7 @@ parse_task = Task(
 # ---- Task 2：供应商风险评估 ----
 # 由 risk_agent 执行，会调用 check_supplier_risk 工具
 risk_task = Task(
-    description="""基于供应商名称，查询该供应商的风险数据。
+    description="""基于供应商名称（从上一个任务的结果中获取supplier_name），**必须调用供应商风险查询工具（check_supplier_risk）**来获取风险数据。
     需要获取：
     - 历史交货延迟率
     - 质量合格率
@@ -55,7 +55,7 @@ risk_task = Task(
 # ---- Task 3：异常处理 ----
 # 由 exception_agent 执行，仅在风险等级为"高风险"时触发
 exception_task = Task(
-    description="""针对高风险供应商的订单，生成异常处理建议。
+    description="""基于上一个任务（供应商风险评估）的结果，针对高风险供应商生成异常处理建议。
     建议应包括：
     1. 风险原因分析
     2. 具体应对措施（如：启动备选供应商、重新谈判条款等）
